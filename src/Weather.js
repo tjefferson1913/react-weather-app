@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './Weather.css';
 import axios from "axios";
 
-export default function Weather() {
+export default function Weather(props) {
     const [ready,setReady] = useState(false);
     const [weatherData,setWeatherData] =useState({ ready: false });
     function handleResponse(response) {
@@ -74,8 +74,7 @@ export default function Weather() {
     } else {
     
     const apiKey = "2936a2aac9698ca0c47a6a60f8ab239e";
-    let city = "Miami";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
     return "This is attempting to Load...";
 }  
