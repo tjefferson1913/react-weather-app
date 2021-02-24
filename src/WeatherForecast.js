@@ -13,17 +13,17 @@ export default function WeatherForecast(props) {
     setLoaded(true);
   }
 
-  if (loaded) {
+  if (loaded && props.city === forecast.city.name) {
     return (
       <div className="WeatherForecast row">
-          <div className="col">
-        <WeatherForecastSummary data={Math.round(forecast.list[0])} />
-        <WeatherForecastSummary data={Math.round(forecast.list[1])} />
-        <WeatherForecastSummary data={Math.round(forecast.list[2])} />
-        <WeatherForecastSummary data={Math.round(forecast.list[3])} />
-        <WeatherForecastSummary data={Math.round(forecast.list[4])} />
-        <WeatherForecastSummary data={Math.round(forecast.list[5])} />
-      </div>
+        
+        <WeatherForecastSummary data={forecast.list[0]} />
+        <WeatherForecastSummary data={forecast.list[1]} />
+        <WeatherForecastSummary data={forecast.list[2]} />
+        <WeatherForecastSummary data={forecast.list[3]} />
+        <WeatherForecastSummary data={forecast.list[4]} />
+        <WeatherForecastSummary data={forecast.list[5]} />
+     
       </div>
 
     );
