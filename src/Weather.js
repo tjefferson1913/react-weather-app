@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import WeatherDetail from "./WeatherDetail";
+import WeatherForecast from "./WeatherForecast.js";
 
 
 
@@ -24,7 +25,7 @@ export default function Weather(props) {
 
       function search() {
         const apiKey = "2936a2aac9698ca0c47a6a60f8ab239e";
-        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
         axios.get(apiUrl).then(handleResponse);
       }
 
@@ -63,6 +64,7 @@ export default function Weather(props) {
             </div>
           </form>
           <WeatherDetail data={weatherData} />
+          <WeatherForecast city={weatherData.city} />
         </div>
       );
     } else {

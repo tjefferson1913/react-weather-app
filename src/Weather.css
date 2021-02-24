@@ -56,7 +56,8 @@ max-width: 600px;
     font-weight: 400;
     position: relative;
     top: -34 px;
-    line-height: 1;
+    line-height: 64px;
+    margin-left: 10px;
 }
 
 .Weather canvas {
