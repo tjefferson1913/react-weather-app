@@ -1,5 +1,6 @@
 import React from "react";
 import CurrentDate from "./CurrentDate";
+import WeatherImage from "./WeatherImage";
 
 export default function WeatherDetail(props) {
     return (
@@ -15,6 +16,9 @@ export default function WeatherDetail(props) {
     <div className ="row mt-3">
     <div className="col-6">
         <div className="clearfix">
+            <div className="float-left">
+            <WeatherImage code={props.data.icon} />
+            </div>
         <img
         src={props.data.picUrl}
         alt={props.data.description}
